@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for php-bitcoinrpc
+about: Suggest an idea for php-dogecoinrpc
 
 ---
 

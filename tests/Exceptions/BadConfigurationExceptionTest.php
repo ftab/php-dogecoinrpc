@@ -1,9 +1,9 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests\Exceptions;
+namespace ftab\Dogecoin\Tests\Exceptions;
 
-use Denpa\Bitcoin\Exceptions\BadConfigurationException;
-use Denpa\Bitcoin\Tests\TestCase;
+use ftab\Dogecoin\Exceptions\BadConfigurationException;
+use ftab\Dogecoin\Tests\TestCase;
 
 class BadConfigurationExceptionTest extends TestCase
 {

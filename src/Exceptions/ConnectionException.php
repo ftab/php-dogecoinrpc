@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Exceptions;
+namespace ftab\Dogecoin\Exceptions;
 
 use GuzzleHttp\Psr7\Request;
 

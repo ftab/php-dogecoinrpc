@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Traits;
+namespace ftab\Dogecoin\Traits;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;

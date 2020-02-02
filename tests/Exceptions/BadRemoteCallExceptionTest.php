@@ -1,10 +1,10 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests\Exceptions;
+namespace ftab\Dogecoin\Tests\Exceptions;
 
-use Denpa\Bitcoin\Exceptions\BadRemoteCallException;
-use Denpa\Bitcoin\Responses\Response;
-use Denpa\Bitcoin\Tests\TestCase;
+use ftab\Dogecoin\Exceptions\BadRemoteCallException;
+use ftab\Dogecoin\Responses\Response;
+use ftab\Dogecoin\Tests\TestCase;
 
 class BadRemoteCallExceptionTest extends TestCase
 {

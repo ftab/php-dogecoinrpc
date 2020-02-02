@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin;
+namespace ftab\Dogecoin;
 
-use Denpa\Bitcoin\Exceptions\BadRemoteCallException;
-use Denpa\Bitcoin\Traits\HandlesAsync;
+use ftab\Dogecoin\Exceptions\BadConfigurationException;
+use ftab\Dogecoin\Exceptions\BadRemoteCallException;
+use ftab\Dogecoin\Traits\HandlesAsync;
 use GuzzleHttp\Client as GuzzleHttp;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
@@ -28,7 +29,7 @@ class Client
     /**
      * Client configuration.
      *
-     * @var \Denpa\Bitcoin\Config
+     * @var \ftab\Dogecoin\Config
      */
     protected $config;
 
@@ -94,7 +95,7 @@ class Client
     /**
      * Gets client config.
      *
-     * @return \Denpa\Bitcoin\Config
+     * @return \ftab\Dogecoin\Config
      */
     public function getConfig() : Config
     {
@@ -125,28 +126,15 @@ class Client
         return $this;
     }
 
-    /**
-     * Sets wallet for multi-wallet rpc request.
-     *
-     * @param string $name
-     *
-     * @return self
-     */
-    public function wallet(string $name) : self
-    {
-        $this->path = "/wallet/$name";
-
-        return $this;
-    }
-
-    /**
-     * Makes request to Bitcoin Core.
-     *
-     * @param string $method
-     * @param mixed  $params
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
+	/**
+	 * Makes request to Dogecoin Core.
+	 *
+	 * @param string $method
+	 * @param mixed $params
+	 *
+	 * @return \Psr\Http\Message\ResponseInterface
+	 * @throws Throwable
+	 */
     public function request(string $method, ...$params) : ResponseInterface
     {
         try {
@@ -165,7 +153,7 @@ class Client
     }
 
     /**
-     * Makes async request to Bitcoin Core.
+     * Makes async request to Dogecoin Core.
      *
      * @param string        $method
      * @param mixed         $params
@@ -213,7 +201,7 @@ class Client
     }
 
     /**
-     * Makes request to Bitcoin Core.
+     * Makes request to Dogecoin Core.
      *
      * @param string $method
      * @param array  $params
@@ -236,7 +224,7 @@ class Client
      */
     protected function getConfigProvider() : string
     {
-        return 'Denpa\\Bitcoin\\Config';
+        return 'ftab\\Dogecoin\\Config';
     }
 
     /**
@@ -246,7 +234,7 @@ class Client
      */
     protected function getResponseHandler() : string
     {
-        return 'Denpa\\Bitcoin\\Responses\\BitcoindResponse';
+        return 'ftab\\Dogecoin\\Responses\\DogecoindResponse';
     }
 
     /**
@@ -264,7 +252,7 @@ class Client
 
                 return new $handler($response);
             }),
-            'bitcoind_response'
+            'dogecoind_response'
         );
 
         return $stack;

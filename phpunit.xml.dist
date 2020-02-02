@@ -13,7 +13,7 @@
     verbose="true"
 >
     <testsuites>
-        <testsuite name="Bitcoin API Test Suite">
+        <testsuite name="Dogecoin API Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

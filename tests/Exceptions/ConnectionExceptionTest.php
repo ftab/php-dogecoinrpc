@@ -1,9 +1,9 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests\Exceptions;
+namespace ftab\Dogecoin\Tests\Exceptions;
 
-use Denpa\Bitcoin\Exceptions\ConnectionException;
-use Denpa\Bitcoin\Tests\TestCase;
+use ftab\Dogecoin\Exceptions\ConnectionException;
+use ftab\Dogecoin\Tests\TestCase;
 use GuzzleHttp\Psr7\Request;
 
 class ConnectionExceptionTest extends TestCase

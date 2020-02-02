@@ -1,14 +1,14 @@
 {
-    "name": "denpa/php-bitcoinrpc",
+    "name": "ftab/php-dogecoinrpc",
     "type": "library",
-    "description": "Bitcoin JSON-RPC client based on GuzzleHttp",
-    "keywords": ["bitcoin","api","jsonrpc","guzzle"],
-    "homepage": "https://github.com/denpamusic/php-bitcoinrpc",
+    "description": "Dogecoin JSON-RPC client based on php-pitcoinrpc",
+    "keywords": ["dogecoin","api","jsonrpc","guzzle"],
+    "homepage": "https://github.com/ftab/php-dogecoinrpc",
     "license": "MIT",
     "authors": [
         {
-            "name": "Denis Paavilainen",
-            "email": "denpa@netfleet.space",
+            "name": "Dennis Field",
+            "email": "fury@xibase.com",
             "role": "Developer"
         }
     ],
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4" : {
-            "Denpa\\Bitcoin\\": "src"
+            "ftab\\Dogecoin\\": "src"
         },
         "files" : [
             "src/functions.php"
@@ -29,7 +29,7 @@
     },
     "autoload-dev": {
         "psr-4" : {
-            "Denpa\\Bitcoin\\Tests\\": "tests"
+            "ftab\\Dogecoin\\Tests\\": "tests"
         }
     }
 }

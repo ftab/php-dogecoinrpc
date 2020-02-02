@@ -2,64 +2,36 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin;
+namespace ftab\Dogecoin;
 
-use Denpa\Bitcoin\Exceptions\BadConfigurationException;
-use Denpa\Bitcoin\Exceptions\Handler as ExceptionHandler;
+use ftab\Dogecoin\Exceptions\BadConfigurationException;
+use ftab\Dogecoin\Exceptions\Handler as ExceptionHandler;
 
-if (!function_exists('to_bitcoin')) {
+if (!function_exists('to_dogecoin')) {
     /**
-     * Converts from satoshi to bitcoin.
+     * Converts from dogetoshi to dogecoin.
      *
-     * @param int $satoshi
+     * @param int $dogetoshi
      *
      * @return string
      */
-    function to_bitcoin(int $satoshi) : string
+    function to_dogecoin(int $dogetoshi) : string
     {
-        return bcdiv((string) $satoshi, (string) 1e8, 8);
+        return bcdiv((string) $dogetoshi, (string) 1e8, 8);
     }
 }
 
-if (!function_exists('to_satoshi')) {
+if (!function_exists('to_dogetoshi')) {
     /**
-     * Converts from bitcoin to satoshi.
+     * Converts from dogecoin to dogetoshi.
      *
-     * @param string|float $bitcoin
+     * @param string|float $dogecoin
      *
      * @return string
      */
-    function to_satoshi($bitcoin) : string
+    function to_dogetoshi($dogecoin) : string
     {
-        return bcmul(to_fixed($bitcoin, 8), (string) 1e8);
-    }
-}
-
-if (!function_exists('to_ubtc')) {
-    /**
-     * Converts from bitcoin to ubtc/bits.
-     *
-     * @param string|float $bitcoin
-     *
-     * @return string
-     */
-    function to_ubtc($bitcoin) : string
-    {
-        return bcmul(to_fixed($bitcoin, 8), (string) 1e6, 4);
-    }
-}
-
-if (!function_exists('to_mbtc')) {
-    /**
-     * Converts from bitcoin to mbtc.
-     *
-     * @param string|float $bitcoin
-     *
-     * @return string
-     */
-    function to_mbtc($bitcoin) : string
-    {
-        return bcmul(to_fixed($bitcoin, 8), (string) 1e3, 4);
+        return bcmul(to_fixed($dogecoin, 8), (string) 1e8);
     }
 }
 
@@ -110,7 +82,7 @@ if (!function_exists('exception')) {
     /**
      * Gets exception handler instance.
      *
-     * @return \Denpa\Bitcoin\Exceptions\Handler
+     * @return \ftab\Dogecoin\Exceptions\Handler
      */
     function exception() : ExceptionHandler
     {

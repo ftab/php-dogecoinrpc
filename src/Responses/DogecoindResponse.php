@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Responses;
+namespace ftab\Dogecoin\Responses;
 
-use Denpa\Bitcoin\Traits\Collection;
-use Denpa\Bitcoin\Traits\ImmutableArray;
-use Denpa\Bitcoin\Traits\SerializableContainer;
+use ftab\Dogecoin\Traits\Collection;
+use ftab\Dogecoin\Traits\ImmutableArray;
+use ftab\Dogecoin\Traits\SerializableContainer;
 
-class BitcoindResponse extends Response implements
+class DogecoindResponse extends Response implements
     \ArrayAccess,
     \Countable,
     \Serializable,

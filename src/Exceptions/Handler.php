@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin\Exceptions;
+namespace ftab\Dogecoin\Exceptions;
 
-use Denpa\Bitcoin\Traits\Singleton;
+use ftab\Dogecoin\Traits\Singleton;
 use GuzzleHttp\Exception\RequestException;
 use Throwable;
 

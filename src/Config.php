@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Denpa\Bitcoin;
+namespace ftab\Dogecoin;
 
-use Denpa\Bitcoin\Traits\Collection;
-use Denpa\Bitcoin\Traits\ImmutableArray;
+use ftab\Dogecoin\Traits\Collection;
+use ftab\Dogecoin\Traits\ImmutableArray;
 
 class Config implements \ArrayAccess, \Countable
 {
@@ -19,7 +19,7 @@ class Config implements \ArrayAccess, \Countable
     protected $config = [
         'scheme'        => 'http',
         'host'          => '127.0.0.1',
-        'port'          => 8332,
+        'port'          => 22555,
         'user'          => null,
         'password'      => null,
         'ca'            => null,

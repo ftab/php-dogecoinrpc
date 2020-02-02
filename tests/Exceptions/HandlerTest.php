@@ -1,10 +1,10 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests\Exceptions;
+namespace ftab\Dogecoin\Tests\Exceptions;
 
-use Denpa\Bitcoin\Exceptions;
-use Denpa\Bitcoin\Exceptions\Handler as ExceptionHandler;
-use Denpa\Bitcoin\Tests\TestCase;
+use ftab\Dogecoin\Exceptions;
+use ftab\Dogecoin\Exceptions\Handler as ExceptionHandler;
+use ftab\Dogecoin\Tests\TestCase;
 use Exception;
 
 class HandlerTest extends TestCase
@@ -61,7 +61,7 @@ class HandlerTest extends TestCase
         $this->expectException(BadConfigurationException::class);
         $this->expectExceptionMessage('Test message');
 
-        ExceptionHandler::getInstance()->setNamespace('Denpa\\Bitcoin\\Tests\\Exceptions');
+        ExceptionHandler::getInstance()->setNamespace('ftab\\Dogecoin\\Tests\\Exceptions');
         ExceptionHandler::getInstance()->handle(
             new Exceptions\BadConfigurationException(['foo' => 'bar'], 'Test message')
         );

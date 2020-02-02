@@ -1,14 +1,14 @@
 <?php
 
-namespace Denpa\Bitcoin\Tests\Responses;
+namespace ftab\Dogecoin\Tests\Responses;
 
-use Denpa\Bitcoin\Responses\BitcoindResponse;
-use Denpa\Bitcoin\Tests\TestCase;
+use ftab\Dogecoin\Responses\DogecoindResponse;
+use ftab\Dogecoin\Tests\TestCase;
 use GuzzleHttp\Psr7\BufferStream;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 
-class BitcoindResponseTest extends TestCase
+class DogecoindResponseTest extends TestCase
 {
     /**
      * Set up test.
@@ -20,7 +20,7 @@ class BitcoindResponseTest extends TestCase
         parent::setUp();
 
         $this->guzzleResponse = $this->getBlockResponse();
-        $this->response = new BitcoindResponse($this->guzzleResponse);
+        $this->response = new DogecoindResponse($this->guzzleResponse);
         $this->response = $this->response->withHeader('X-Test', 'test');
     }
 
@@ -32,8 +32,8 @@ class BitcoindResponseTest extends TestCase
     public function testResponseToString() : void
     {
         $response = $this->response;
-        $this->assertSame((string) $response('difficulty'), '1');
-        $this->assertSame((string) $response('confirmations'), '449162');
+        $this->assertSame((string) $response('difficulty'), '0.000244140625');
+        $this->assertSame((string) $response('confirmations'), '3088105');
         $this->assertSame(
             (string) $response('tx'),
             json_encode(self::$getBlockResponse['tx'])
@@ -65,7 +65,7 @@ class BitcoindResponseTest extends TestCase
      */
     public function testNoResult() : void
     {
-        $response = new BitcoindResponse($this->rawTransactionError());
+        $response = new DogecoindResponse($this->rawTransactionError());
         $this->assertFalse($response->hasResult());
     }
 
@@ -121,7 +121,7 @@ class BitcoindResponseTest extends TestCase
      */
     public function testError() : void
     {
-        $response = new BitcoindResponse($this->rawTransactionError());
+        $response = new DogecoindResponse($this->rawTransactionError());
 
         $this->assertTrue($response->hasError());
 
@@ -307,7 +307,7 @@ class BitcoindResponseTest extends TestCase
     {
         $this->assertTrue($this->response->exists('hash'));
         $this->assertTrue($this->response->exists('tx.0'));
-        $this->assertTrue($this->response->exists('tx.3'));
+        $this->assertTrue($this->response->exists('tx.1'));
         $this->assertTrue($this->response->exists('height'));
         $this->assertFalse($this->response->exists('cookies'));
     }
@@ -319,8 +319,8 @@ class BitcoindResponseTest extends TestCase
      */
     public function testContains() : void
     {
-        $this->assertTrue($this->response->contains('00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048'));
-        $this->assertTrue($this->response->contains('bedb088c480e5f7424a958350f2389c839d17e27dae13643632159b9e7c05482', 'tx'));
+        $this->assertTrue($this->response->contains('1a91e3dace36e2be3bf030a65679fe821aa1d6ef92e7c9902eb318182c355691'));
+        $this->assertTrue($this->response->contains('5b2a3f53f605d62c53e62932dac6925e3d74afa5a4b459745c36d42d0ed26a69', 'tx'));
         $this->assertFalse($this->response->contains('cookies'));
     }
 
@@ -444,7 +444,7 @@ class BitcoindResponseTest extends TestCase
         );
 
         $this->assertEquals(
-            4,
+            2,
             $this->response->count('tx')
         );
     }
@@ -559,8 +559,8 @@ class BitcoindResponseTest extends TestCase
 
         $serialized = sprintf(
             'C:%u:"%s":%u:{%s}',
-            strlen(BitcoindResponse::class),
-            BitcoindResponse::class,
+            strlen(DogecoindResponse::class),
+            DogecoindResponse::class,
             strlen($serializedContainer),
             $serializedContainer
         );
