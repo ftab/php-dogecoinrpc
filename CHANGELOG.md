@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1 - 2020/02/16
+
+Negative numbers need some love too
+
 ## 3.0.0 - 2020/02/16
 
 **BREAKING CHANGE:** Using strings instead of floats for amount, fee, and balance to avoid accuracy issues

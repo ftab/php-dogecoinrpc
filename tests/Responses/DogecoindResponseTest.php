@@ -608,9 +608,9 @@ class DogecoindResponseTest extends TestCase
     {
         $response = $this->response;
 
-        $this->assertEquals("18387.02299934", $response('test1.*.*')->sum('amount'));
-        $this->assertEquals("18387.02299934", $response('test1.*.*.amount')->sum());
-        $this->assertEquals("18387.02299934", $response->sum('test1.*.*.amount'));
+		$this->assertEquals("18382.02299934", $response('test1.*.*')->sum('amount'));
+		$this->assertEquals("18382.02299934", $response('test1.*.*.amount')->sum());
+		$this->assertEquals("18382.02299934", $response->sum('test1.*.*.amount'));
     }
 
     /**
@@ -622,8 +622,8 @@ class DogecoindResponseTest extends TestCase
     {
         $response = $this->response;
 
-        $this->assertEquals(["3", "4", "18380.02299934"], $response('test1.*.*')->flatten('amount'));
-        $this->assertEquals(["3", "4", "18380.02299934"], $response('test1.*.*.amount')->flatten());
-        $this->assertEquals(["3", "4", "18380.02299934"], $response->flatten('test1.*.*.amount'));
+		$this->assertEquals(["3", "4", "18380.02299934", "-5"], $response('test1.*.*')->flatten('amount'));
+		$this->assertEquals(["3", "4", "18380.02299934", "-5"], $response('test1.*.*.amount')->flatten());
+		$this->assertEquals(["3", "4", "18380.02299934", "-5"], $response->flatten('test1.*.*.amount'));
     }
 }

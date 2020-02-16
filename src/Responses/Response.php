@@ -37,7 +37,7 @@ abstract class Response implements ResponseInterface
         $this->response = $response;
 		/* PHP floats lose precision at around 13-14 significant digits which can be common among Dogecoin transactions
 		   and balances. Force them to be strings and use bcmath to add */
-		$getString = preg_replace('/"(amount|fee|balance)":([\d\.]+)/', '"$1":"$2"',
+		$getString = preg_replace('/"(amount|fee|balance)":([\d\.\-]+)/', '"$1":"$2"',
 								  (string)$response->getBody());
 		$this->container = json_decode($getString, true);
     }

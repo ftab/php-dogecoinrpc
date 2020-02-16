@@ -68,6 +68,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 				'test7' => [
 					'amount' => '18380.02299934'
 				]
+			],
+			'test8' => [
+				'test9' => [
+					'amount' => -5
+				]
 			]
         ],
     ];
