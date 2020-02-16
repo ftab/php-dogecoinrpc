@@ -265,11 +265,16 @@ trait Collection
      *
      * @param string|null $key
      *
-     * @return float
+     * @return string
      */
-    public function sum(?string $key = null) : float
+    public function sum(?string $key = null) : string
     {
-        return array_sum($this->flatten($key));
+    	$sum = "0";
+    	foreach ($this->flatten($key) as $val)
+		{
+			$sum = bcadd($sum, $val, 8);
+		}
+    	return $sum;
     }
 
     /**

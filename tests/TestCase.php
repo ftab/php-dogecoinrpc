@@ -64,6 +64,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
                     'amount' => 4,
                 ],
             ],
+			'test6' => [
+				'test7' => [
+					'amount' => '18380.02299934'
+				]
+			]
         ],
     ];
 
@@ -80,9 +85,9 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * Balance response.
      *
-     * @var float
+     * @var string
      */
-    protected static $balanceResponse = 0.1;
+    protected static $balanceResponse = "0.1";
 
     /**
      * Get error 500 message.

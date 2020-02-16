@@ -11,13 +11,13 @@ if (!function_exists('to_dogecoin')) {
     /**
      * Converts from dogetoshi to dogecoin.
      *
-     * @param int $dogetoshi
+     * @param string $dogetoshi
      *
      * @return string
      */
-    function to_dogecoin(int $dogetoshi) : string
+    function to_dogecoin(string $dogetoshi) : string
     {
-        return bcdiv((string) $dogetoshi, (string) 1e8, 8);
+        return bcdiv($dogetoshi, (string) 1e8, 8);
     }
 }
 

@@ -5,7 +5,7 @@
 Run ```php composer.phar require ftab/php-dogecoinrpc``` in your project directory or add following lines to composer.json
 ```javascript
 "require": {
-    "ftab/php-dogecoinrpc": "^2.1"
+    "ftab/php-dogecoinrpc": "^3.0"
 }
 ```
 and run ```php composer.phar install```.
@@ -145,17 +145,17 @@ Package provides following helpers to assist with value handling.
 #### `to_dogecoin()`
 Converts value in dogetoshi to dogecoin.
 ```php
-echo ftab\Dogecoin\to_dogecoin(100000); // 0.00100000
+echo ftab\Dogecoin\to_dogecoin('100000'); // '0.00100000'
 ```
 #### `to_dogetoshi()`
 Converts value in dogecoin to dogetoshi.
 ```php
-echo ftab\Dogecoin\to_dogetoshi(0.001); // 100000
+echo ftab\Dogecoin\to_dogetoshi('0.001'); // '100000'
 ```
 #### `to_fixed()`
-Trims float value to precision without rounding.
+Trims value to precision without rounding.
 ```php
-echo ftab\Dogecoin\to_fixed(0.1236, 3); // 0.123
+echo ftab\Dogecoin\to_fixed('0.1236', 3); // '0.123'
 ```
 
 ## License

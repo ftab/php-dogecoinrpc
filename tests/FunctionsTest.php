@@ -11,14 +11,14 @@ class FunctionsTest extends TestCase
     /**
      * Test dogetoshi to dogecoin converter.
      *
-     * @param int    $dogetoshi
+     * @param string $dogetoshi
      * @param string $dogecoin
      *
      * @return void
      *
      * @dataProvider dogetoshiDogeProvider
      */
-    public function testToBtc(int $dogetoshi, string $dogecoin) : void
+    public function testToDogecoin(string $dogetoshi, string $dogecoin) : void
     {
         $this->assertEquals($dogecoin, Dogecoin\to_dogecoin($dogetoshi));
     }
@@ -26,14 +26,14 @@ class FunctionsTest extends TestCase
     /**
      * Test dogecoin to dogetoshi converter.
      *
-     * @param int    $dogetoshi
+     * @param string $dogetoshi
      * @param string $dogecoin
      *
      * @return void
      *
      * @dataProvider dogetoshiDogeProvider
      */
-    public function testToDogetoshi(int $dogetoshi, string $dogecoin) : void
+    public function testToDogetoshi(string $dogetoshi, string $dogecoin) : void
     {
         $this->assertEquals($dogetoshi, Dogecoin\to_dogetoshi($dogecoin));
     }
@@ -41,7 +41,7 @@ class FunctionsTest extends TestCase
     /**
      * Test float to fixed converter.
      *
-     * @param float  $float
+     * @param string $float
      * @param int    $precision
      * @param string $expected
      *
@@ -50,7 +50,7 @@ class FunctionsTest extends TestCase
      * @dataProvider floatProvider
      */
     public function testToFixed(
-        float $float,
+        string $float,
         int $precision,
         string $expected
     ) : void {
@@ -138,12 +138,12 @@ class FunctionsTest extends TestCase
     public function dogetoshiDogeProvider() : array
     {
         return [
-            [1000, '0.00001000'],
-            [2500, '0.00002500'],
-            [-1000, '-0.00001000'],
-            [100000000, '1.00000000'],
-            [150000000, '1.50000000'],
-            [2100000000000000, '21000000.00000000'],
+            ['1000', '0.00001000'],
+            ['2500', '0.00002500'],
+            ['-1000', '-0.00001000'],
+            ['100000000', '1.00000000'],
+            ['150000000', '1.50000000'],
+            ['2100000000000012', '21000000.00000012'],
         ];
     }
 
@@ -155,10 +155,10 @@ class FunctionsTest extends TestCase
     public function floatProvider() : array
     {
         return [
-            [1.2345678910, 0, '1'],
-            [1.2345678910, 2, '1.23'],
-            [1.2345678910, 4, '1.2345'],
-            [1.2345678910, 8, '1.23456789'],
+            ['1.2345678910', 0, '1'],
+            ['1.2345678910', 2, '1.23'],
+            ['1.2345678910', 4, '1.2345'],
+            ['1.2345678910', 8, '1.23456789'],
         ];
     }
 }

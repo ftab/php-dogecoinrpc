@@ -1,7 +1,7 @@
 {
     "name": "ftab/php-dogecoinrpc",
     "type": "library",
-    "description": "Dogecoin JSON-RPC client based on php-pitcoinrpc",
+    "description": "Dogecoin JSON-RPC client based on php-bitcoinrpc",
     "keywords": ["dogecoin","api","jsonrpc","guzzle"],
     "homepage": "https://github.com/ftab/php-dogecoinrpc",
     "license": "MIT",
@@ -14,6 +14,7 @@
     ],
     "require": {
         "php": ">=7.1",
+        "ext-bcmath": "*",
         "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
