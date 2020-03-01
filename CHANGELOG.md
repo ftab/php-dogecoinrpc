@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.2 - 2020/03/01
+
+Add unconfirmed_balance and immature_balance to the keys that are stringified (walletinfo)
+
 ## 3.0.1 - 2020/02/16
 
 Negative numbers need some love too
